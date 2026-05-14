@@ -58,8 +58,12 @@ def format_incoming_alert(alert: IncomingAlert) -> RenderableType:
     if alert.source:
         header_parts.append(f"from {escape(alert.source)}")
     if alert.severity:
+<<<<<<< HEAD
         # Escape the whole `[severity]` fragment so Rich cannot treat `[bold ...]` etc. as tags.
         header_parts.append(escape(f"[{alert.severity}]"))
+=======
+        header_parts.append(f"\\[{escape(alert.severity)}\\]")
+>>>>>>> 68771cc0 (fix(alert_renderer): escape severity brackets in alert header output)
 
     header = " | ".join(header_parts)
 

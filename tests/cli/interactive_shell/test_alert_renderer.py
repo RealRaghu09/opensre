@@ -105,8 +105,8 @@ class TestFormatIncomingAlert:
         console.print(format_incoming_alert(alert))
         output = console.export_text()
 
-        assert "[critical] [red]pwned]" in output
-        assert "pwned]" in output
+        assert "[critical] [red]pwned\\]" in output
+        assert "pwned\\]" in output
 
     def test_severity_like_rich_style_tag_is_literal(self) -> None:
         """Severity values resembling Rich markup must not apply styles."""
